@@ -21,9 +21,9 @@ return response()->json($model);
 $ composer require 'grohiro/laravel-camelcase-json' '~1.0'
 ```
 
-Add a service provider.
+Add the service provider.
 
-**config/app.php**/
+**config/app.php**
 
 ```php
 'provider' => [
