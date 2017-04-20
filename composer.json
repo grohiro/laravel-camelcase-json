@@ -1,0 +1,12 @@
+{
+    "name": "grohiro/laravel-camelcase-json",
+    "version": "0.1",
+    "description": "Convert response JSON key to camelCase",
+    "license": "MIT",
+    "require": {},
+    "autoload": {
+      "psr-4": {
+        "Grohiro\\LaravelCamelCaseJson\\": "src/"
+      }
+    }
+}
