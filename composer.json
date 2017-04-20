@@ -1,6 +1,6 @@
 {
     "name": "grohiro/laravel-camelcase-json",
-    "version": "0.1",
+    "version": "1.0",
     "description": "Convert response JSON key to camelCase",
     "license": "MIT",
     "require": {},
