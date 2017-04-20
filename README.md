@@ -18,7 +18,7 @@ return response()->json($model);
 ## Install 
 
 ```bash
-$ composer require 'grohiro/laravel-camelcase-json' '^1.0'
+$ composer require 'grohiro/laravel-camelcase-json' '~1.0'
 ```
 
 Add a service provider.
