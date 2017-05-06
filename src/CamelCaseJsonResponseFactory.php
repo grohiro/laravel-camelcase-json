@@ -1,8 +1,7 @@
 <?php
 namespace Grohiro\LaravelCamelCaseJson;
 
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Routing\ResponseFactory as BaseResponseFactory;
 
 /**
@@ -26,10 +25,8 @@ class CamelCaseJsonResponseFactory extends BaseResponseFactory
      */
     public function encodeJson($value)
     {
-        if ($value instanceof Collection) {
-            return $this->encodeCollection($value);
-        } else if ($value instanceof Model) {
-            return $this->encodeModel($value);
+        if ($value instanceof Arrayable) {
+            return $this->encodeArrayable($value);
         } else if (is_array($value)) {
             return $this->encodeArray($value);
         } else {
@@ -38,23 +35,11 @@ class CamelCaseJsonResponseFactory extends BaseResponseFactory
     }
 
     /**
-     * Encode a collection
+     * Encode a arrayable
      */
-    public function encodeCollection($collection)
+    public function encodeArrayable($arrayable)
     {
-        $items = [];
-        foreach ($collection as $item) {
-            $items[] = $this->encodeJson($item);
-        }
-        return $items;
-    }
-
-    /**
-     * Encode a model
-     */
-    public function encodeModel($model)
-    {
-        $array = $model->toArray();
+        $array = $arrayable->toArray();
         return $this->encodeJson($array);
     }
 
