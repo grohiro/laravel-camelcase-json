@@ -29,6 +29,8 @@ class CamelCaseJsonResponseFactory extends BaseResponseFactory
             return $this->encodeArrayable($value);
         } else if (is_array($value)) {
             return $this->encodeArray($value);
+        } else if (is_object($value)) {
+            return $this->encodeArray((array) $value);
         } else {
             return $value;
         }
