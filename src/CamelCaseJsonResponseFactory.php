@@ -3,6 +3,7 @@ namespace Grohiro\LaravelCamelCaseJson;
 
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Routing\ResponseFactory as BaseResponseFactory;
+use Illuminate\Support\Str;
 
 /**
  * Convert response JSON key to camelCase
@@ -52,7 +53,7 @@ class CamelCaseJsonResponseFactory extends BaseResponseFactory
     {
         $newArray = [];
         foreach ($array as $key => $val) {
-            $newArray[\camel_case($key)] = $this->encodeJson($val);
+            $newArray[Str::camel($key)] = $this->encodeJson($val);
         }
         return $newArray;
     }
