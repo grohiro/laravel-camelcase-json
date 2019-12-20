@@ -19,6 +19,8 @@ return response()->json($model);
 
 ```bash
 $ composer require 'grohiro/laravel-camelcase-json' '~1.0'
+# Laravel 5.7+
+$ composer require 'grohiro/laravel-camelcase-json' '~2.0'
 ```
 
 Add the service provider.
