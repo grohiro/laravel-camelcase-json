@@ -3,7 +3,10 @@
     "version": "2.0.0",
     "description": "Convert response JSON key to camelCase",
     "license": "MIT",
-    "require": {},
+    "require": {
+        "php": "^7.2",
+        "laravel/framework": "~5.8|^6.0|^7.0|^8.0",
+    },
     "autoload": {
       "psr-4": {
         "Grohiro\\LaravelCamelCaseJson\\": "src/"
